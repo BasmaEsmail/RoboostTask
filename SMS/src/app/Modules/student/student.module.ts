@@ -3,15 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { StudentRoutingModule } from './student-routing.module';
 import { StudentListComponent } from './student-list/student-list.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    StudentListComponent
+    StudentListComponent,
+    AddStudentComponent
   ],
   imports: [
     CommonModule,
-    StudentRoutingModule
+    StudentRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class StudentModule { }

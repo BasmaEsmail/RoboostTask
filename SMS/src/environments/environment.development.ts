@@ -1,1 +1,3 @@
-export const environment = {};
+export const environment = {
+    apiURL:'https://api.mohamed-sadek.com'
+};

@@ -1,9 +1,9 @@
 import { StudentDataDTO } from "./student-data-dto";
 
 export interface ResultDTO {
-    data:StudentDataDTO[];
-    message?:string;
-    success:boolean;
-    isAuthorized:boolean;
+    Data:StudentDataDTO[];
+    Message?:string;
+    Success:boolean;
+    IsAuthorized:boolean;
 
 }

@@ -1,8 +1,8 @@
 export interface StudentDataDTO {
-    iD:number;
-    name:string;
-    mobile:string;
-    email:string;
-    nationalID:string;
-    age:number;
+    ID:number;
+    Name:string;
+    Mobile:string;
+    Email:string;
+    NationalID:string;
+    Age:number;
 }
