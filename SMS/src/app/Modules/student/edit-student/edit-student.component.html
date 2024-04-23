@@ -1,6 +1,34 @@
-<div class="container">
 
+   <div class="row  my-4">
+    <div class="title col-2">
+        <p class="fs-5 ">
+            Edit Student
+        </p>
+    </div>
+    
+   </div>
+   
     <form class="my-3 mx-3" [formGroup]="updateStudentForm">
+        <div class="row">
+            <div class=" col-6 mb-3">
+                <label class="form-label"> Name In Arabic</label>
+                <input type="text" class="form-control" formControlName="nameArabicControl">
+                <span class="text-danger error " *ngIf="submitted&&updateStudentForm.controls['nameArabicControl'].hasError('required')">
+                     Required 
+                </span>
+            </div>
+    
+            <div class=" col-6 mb-3">
+                <label class="form-label">Name In English</label>
+                <input type="text" class="form-control"  formControlName="nameEnglishControl">
+                <span class="text-danger error" 
+                *ngIf="submitted&&updateStudentForm.controls['nameEnglishControl'].hasError('required')">
+                 Required
+                 </span>
+
+            </div>
+        </div>
+
         <div class="row">
             <div class=" col-6 mb-3">
                 <label class="form-label">First Name</label>
@@ -53,4 +81,3 @@
         <button type="submit" class="btn btn-success mx-2" (click)="save()">Save</button>
 
     </form>
-</div>

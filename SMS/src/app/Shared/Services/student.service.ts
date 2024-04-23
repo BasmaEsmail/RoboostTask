@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
 import { AddStudentDTO } from '../Models/add-student-dto';
 import { StudentDataDTO } from '../Models/student-data-dto';
+import { UpdateStudentDTO } from '../Models/update-student-dto';
+import { EditableStudentDTO } from '../Models/editable-student-dto';
 
 
 @Injectable({
@@ -23,8 +25,12 @@ export class StudentService {
   deleteStudent(id?:number):Observable<ResultDTO>{
     return this.http.delete<ResultDTO>(`${environment.apiURL}/Student/Delete?id=${id}`)
   }
-  getStudentByID(id?:number){
-    return this.http.get<any>(`${environment.apiURL}/Student/GetByID?id=${id}`)
+  getStudentByID(id?:number):Observable<EditableStudentDTO>{
+    return this.http.get<EditableStudentDTO>(`${environment.apiURL}/Student/GetEditableByID?id=${id}`)
 
+  }
+
+  updateStudent(student:AddStudentDTO):Observable<ResultDTO>{
+    return this.http.put<ResultDTO>(`${environment.apiURL}/Student/Put`,student)
   }
 }
