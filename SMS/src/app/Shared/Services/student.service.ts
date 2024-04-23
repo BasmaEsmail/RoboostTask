@@ -4,6 +4,7 @@ import { ResultDTO } from '../Models/result-dto';
 import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
 import { AddStudentDTO } from '../Models/add-student-dto';
+import { StudentDataDTO } from '../Models/student-data-dto';
 
 
 @Injectable({
@@ -21,5 +22,9 @@ export class StudentService {
   }
   deleteStudent(id?:number):Observable<ResultDTO>{
     return this.http.delete<ResultDTO>(`${environment.apiURL}/Student/Delete?id=${id}`)
+  }
+  getStudentByID(id?:number){
+    return this.http.get<any>(`${environment.apiURL}/Student/GetByID?id=${id}`)
+
   }
 }

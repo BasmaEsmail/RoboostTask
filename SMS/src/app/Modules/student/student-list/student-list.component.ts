@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { StudentDataDTO } from 'src/app/Shared/Models/student-data-dto';
 import { StudentService } from 'src/app/Shared/Services/student.service';
 import { AddStudentComponent } from '../add-student/add-student.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-list',
@@ -18,7 +19,8 @@ export class StudentListComponent implements OnInit {
 
   @ViewChild('confirmModal') confirmModal!:ElementRef ;
   constructor(private studentService:StudentService,
-    private ngbService:NgbModal
+    private ngbService:NgbModal,
+    private router:Router
   ){
 
   }
@@ -44,7 +46,7 @@ export class StudentListComponent implements OnInit {
       
     })
     }
-    editStudent() {
-    throw new Error('Method not implemented.');
+    editStudent(id:number) {
+    this.router.navigate([`student/edit/${id}`])
     }
 }
