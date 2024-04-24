@@ -15,9 +15,8 @@ export class LogInComponent implements OnInit {
   loginForm!:FormGroup;
   failed:boolean=false;
   resMessage?:string;
-  public isLoggedIn:BehaviorSubject<boolean>= new BehaviorSubject<boolean>(false);
 
-  constructor(private userService:UserService,private router:Router){
+  constructor(private userService:UserService, private router:Router){
 
   }
   ngOnInit(): void {
@@ -30,23 +29,22 @@ export class LogInComponent implements OnInit {
       UserName:this.loginForm.controls['userNameControl'].value,
       Password:this.loginForm.controls['passwordControl'].value,
     }
-      this.userService.login(user).subscribe(res=>
-        {          
-          this.isLoggedIn.next(res.Success)
+      this.userService.login(user).subscribe(res => {
+  
+        if (res.Success) {
+          this.failed=false
           
-          if(res.Success)
-            {
-              
-              this.router.navigateByUrl('/student')
-              this.failed=false
-            } 
-            else 
-            {
-              this.resMessage=res.Message;
-              this.failed=true
-            }
+          sessionStorage.setItem('token', res.Data)
+          this.router.navigateByUrl('/student')
         }
+        else {
+          this.failed=true
+          this.resMessage=res.Message
+        }
+  
+      }
       )
+      
     }
 
 }

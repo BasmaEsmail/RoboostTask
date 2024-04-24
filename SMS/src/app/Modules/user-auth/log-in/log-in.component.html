@@ -1,5 +1,5 @@
 <div class="title-box fs-2 text-center my-4">
-  Log In
+  Login
 </div>
 <form class="row my-5 justify-content-center" [formGroup]="loginForm">
     <div class="col-6">
@@ -20,6 +20,13 @@
     </div>
 
 </form>
+
+<div class="row text-center">
+  <p>
+      Don't have an account? <a  class="link-warning" [routerLink]="['/register']">Register</a>
+  </p>
+ 
+</div>
 <div class="row justify-content-center text-center">
   <div class="alert alert-danger col-6" role="alert" *ngIf="failed">
       {{resMessage}}

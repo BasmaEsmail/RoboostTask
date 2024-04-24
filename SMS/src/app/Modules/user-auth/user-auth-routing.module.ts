@@ -7,7 +7,7 @@ const routes: Routes = [
   {path:'register', component:RegisterFormComponent},
   {path:'login', component:LogInComponent},
 
-  {path:'', redirectTo:'register',pathMatch:'full'}
+  {path:'', redirectTo:'login',pathMatch:'full'}
 
 ];
 
