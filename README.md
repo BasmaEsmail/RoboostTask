@@ -3,7 +3,7 @@ It's a project that deals with student data; view, create, add and update each s
 ## How to run locally
 ### 1. Clone the repository 
 ```
-git clone https://github.com/BasmaEsmail/RoboostTask
+git clone https://github.com/BasmaEsmail/RoboostTask.git
 ```
 ###  2.Install dependencies
 ```
