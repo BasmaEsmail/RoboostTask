@@ -6,6 +6,8 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import {  HttpClientModule } from '@angular/common/http';
+import {  TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     CommonModule,
     StudentRoutingModule,
     ReactiveFormsModule,
-    FormsModule
-  ]
+    FormsModule,
+    HttpClientModule,
+    TranslateModule
+  ],
 })
 export class StudentModule { }

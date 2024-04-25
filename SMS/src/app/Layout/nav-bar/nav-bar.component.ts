@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject } from 'rxjs';
 import { UserService } from 'src/app/Shared/Services/user.service';
 
 @Component({
@@ -7,9 +9,16 @@ import { UserService } from 'src/app/Shared/Services/user.service';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent {
-  constructor(private userService:UserService,private router:Router){
+export class NavBarComponent implements OnInit {
+
+  lang?:string;
+  constructor(private userService:UserService,private router:Router,
+    private translateService:TranslateService
+  ){
     
+  }
+  ngOnInit(): void {
+   this.lang=localStorage.getItem('lang')||'en'
   }
 logout(){
   const token = sessionStorage.getItem('token')
@@ -21,4 +30,11 @@ logout(){
     
   })
 }
+//------
+changeLang(event:any) {
+  let selectedLang=event?.target.value  
+  localStorage.setItem('lang',selectedLang)
+  this.translateService.use(selectedLang)
+  location.reload()
+  }
 }
