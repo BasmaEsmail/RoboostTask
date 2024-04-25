@@ -26,6 +26,16 @@ provides CRUD operations (Create, Read, Update, Delete) for student data. It Inc
 ##### - Edit Student 
 ##### - Add Student ( a popup for adding a new student)
 
+## Code Structure
+This project follows a standard Angular project structure. Here's an overview of the key directories:
+### 1.src:
+#### 1.1 app: Contains the core application code.
+##### 1.1.1 modules: Contains the main modules that includes the components .
+##### 1.1.2 shared: contains shared service, guards and models between the modules.
+##### 1.1.3 layout: contains navbar and loader components.
+#### 1.2 assets: Stores static assets like translation files.
+#### 1.3 environments: Contains environment-specific configuration files like apiURL.
+
 ## Dependencies
 This project uses these dependencies:
 #### ng-bootstrap: A set of components and directives that wrap the latest version of Bootstrap.
