@@ -9,7 +9,7 @@ git clone https://github.com/BasmaEsmail/RoboostTask
 ```
 npm install
 ```
-### 2.Start development server
+### 3.Start development server
 ```
 ng serve
 ```
