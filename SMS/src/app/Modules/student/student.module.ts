@@ -5,12 +5,14 @@ import { StudentRoutingModule } from './student-routing.module';
 import { StudentListComponent } from './student-list/student-list.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditStudentComponent } from './edit-student/edit-student.component';
 
 
 @NgModule({
   declarations: [
     StudentListComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    EditStudentComponent
   ],
   imports: [
     CommonModule,

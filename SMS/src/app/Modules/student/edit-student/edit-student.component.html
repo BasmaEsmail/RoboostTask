@@ -1,0 +1,83 @@
+
+   <div class="row  my-4">
+    <div class="title col-2">
+        <p class="fs-5 ">
+            Edit Student
+        </p>
+    </div>
+    
+   </div>
+   
+    <form class="my-3 mx-3" [formGroup]="updateStudentForm">
+        <div class="row">
+            <div class=" col-6 mb-3">
+                <label class="form-label"> Name In Arabic</label>
+                <input type="text" class="form-control" formControlName="nameArabicControl">
+                <span class="text-danger error " *ngIf="submitted&&updateStudentForm.controls['nameArabicControl'].hasError('required')">
+                     Required 
+                </span>
+            </div>
+    
+            <div class=" col-6 mb-3">
+                <label class="form-label">Name In English</label>
+                <input type="text" class="form-control"  formControlName="nameEnglishControl">
+                <span class="text-danger error" 
+                *ngIf="submitted&&updateStudentForm.controls['nameEnglishControl'].hasError('required')">
+                 Required
+                 </span>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class=" col-6 mb-3">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" formControlName="firstNameControl">
+                <span class="text-danger error " *ngIf="submitted&&updateStudentForm.controls['firstNameControl'].hasError('required')">
+                     Required 
+                </span>
+            </div>
+    
+            <div class=" col-6 mb-3">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control"  formControlName="lastNameControl">
+                <span class="text-danger error" 
+                *ngIf="submitted&&updateStudentForm.controls['lastNameControl'].hasError('required')">
+                 Required
+                 </span>
+
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label class="form-label">Mobile</label>
+                <input type="email" class="form-control"  formControlName="mobileControl">
+            </div>
+            <div class="col-6 mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control"  formControlName="emailControl">
+                <span class="text-danger error" 
+                *ngIf="submitted&&updateStudentForm.controls['emailControl'].hasError('email')">
+                 Invalid Email Format
+                 </span>
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label class="form-label">NationalID</label>
+                <input type="text" class="form-control" formControlName="nidControl">
+               
+            </div>
+            <div class="col-6 mb-3">
+                <label class="form-label">Age</label>
+                <input type="text" class="form-control"  formControlName="ageControl">
+            </div>
+        </div>
+       
+
+        <button type="submit" class="btn btn-success mx-2" (click)="save()">Save</button>
+
+    </form>
