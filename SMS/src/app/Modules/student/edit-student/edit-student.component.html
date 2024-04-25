@@ -1,8 +1,9 @@
 
    <div class="row  my-4">
-    <div class="title col-2">
-        <p class="fs-5 ">
-            {{"Edit Student"|translate}}
+    <div class=" col-2">
+        <p class="fs-4 fw-bolder ">
+            <i class="bi bi-square-fill text-warning"></i>
+        {{"Edit Student"|translate}}
         </p>
     </div>
     
@@ -11,7 +12,7 @@
     <form class="my-3 mx-3" [formGroup]="updateStudentForm">
         <div class="row">
             <div class=" col-6 mb-3">
-                <label class="form-label"> {{"Name In Arabic"|translate}}</label>
+                <label class="form-label fw-bold"> {{"Name In Arabic"|translate}}</label>
                 <input type="text" class="form-control" formControlName="nameArabicControl">
                 <span class="text-danger error " *ngIf="submitted&&updateStudentForm.controls['nameArabicControl'].hasError('required')">
                      {{"Required"|translate}} 
@@ -19,7 +20,7 @@
             </div>
     
             <div class=" col-6 mb-3">
-                <label class="form-label">{{"Name In English"|translate}}</label>
+                <label class="form-label fw-bold">{{"Name In English"|translate}}</label>
                 <input type="text" class="form-control"  formControlName="nameEnglishControl">
                 <span class="text-danger error" 
                 *ngIf="submitted&&updateStudentForm.controls['nameEnglishControl'].hasError('required')">
@@ -31,7 +32,7 @@
 
         <div class="row">
             <div class=" col-6 mb-3">
-                <label class="form-label">{{"First Name"|translate}}</label>
+                <label class="form-label fw-bold">{{"First Name"|translate}}</label>
                 <input type="text" class="form-control" formControlName="firstNameControl">
                 <span class="text-danger error " *ngIf="submitted&&updateStudentForm.controls['firstNameControl'].hasError('required')">
                     {{"Required"|translate}}  
@@ -39,7 +40,7 @@
             </div>
     
             <div class=" col-6 mb-3">
-                <label class="form-label">{{"Last Name"|translate}}</label>
+                <label class="form-label fw-bold">{{"Last Name"|translate}}</label>
                 <input type="text" class="form-control"  formControlName="lastNameControl">
                 <span class="text-danger error" 
                 *ngIf="submitted&&updateStudentForm.controls['lastNameControl'].hasError('required')">
@@ -51,11 +52,11 @@
        
         <div class="row">
             <div class="col-6 mb-3">
-                <label class="form-label">{{"Mobile"|translate}}</label>
+                <label class="form-label fw-bold">{{"Mobile"|translate}}</label>
                 <input type="email" class="form-control"  formControlName="mobileControl">
             </div>
             <div class="col-6 mb-3">
-                <label class="form-label">{{"Email"|translate}}</label>
+                <label class="form-label fw-bold">{{"Email"|translate}}</label>
                 <input type="email" class="form-control"  formControlName="emailControl">
                 <span class="text-danger error" 
                 *ngIf="submitted&&updateStudentForm.controls['emailControl'].hasError('email')">
@@ -67,17 +68,17 @@
         
         <div class="row">
             <div class="col-6 mb-3">
-                <label class="form-label">{{"NationalID"|translate}}</label>
+                <label class="form-label fw-bold">{{"NationalID"|translate}}</label>
                 <input type="text" class="form-control" formControlName="nidControl">
                
             </div>
             <div class="col-6 mb-3">
-                <label class="form-label">{{"Age"|translate}}</label>
+                <label class="form-label fw-bold">{{"Age"|translate}}</label>
                 <input type="text" class="form-control"  formControlName="ageControl">
             </div>
         </div>
        
-
-        <button type="submit" class="btn btn-success mx-2" (click)="save()">{{"Save"|translate}}</button>
+        
+        <button type="submit" class="btn btn-success fw-bold" (click)="save()">{{"Save"|translate}}</button>
 
     </form>

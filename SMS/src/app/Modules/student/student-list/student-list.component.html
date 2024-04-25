@@ -1,52 +1,53 @@
 
 <div class="row my-5 ">
   <div class="col-md-6">
-    <button class="btn btn-primary" (click)="openAddForm()">
+    <button class="btn btn-primary fw-bold" (click)="openAddForm()">
       {{"Add"|translate}}
-    </button>
+      <i class="bi bi-plus-lg "></i>
+      </button>
   </div>
   <div class="col-md-6 ">
     <input class="form-control" type="text" placeholder="Search"  (keyup)="search($event)">
   </div>
 </div>
-    
-    <table class="table table-striped table-hover">
-      <thead>
-        <tr>
-          <th>{{"ID"|translate}}</th>
-          <th>{{"Name"|translate}}</th>
-          <th>{{"Mobile"|translate}}</th>
-          <th>{{"Email"|translate}}</th>
-          <th>{{"NationalID"|translate}}</th>
-          <th>{{"Age"|translate}}</th>
-          <th></th>
-          <th></th>
+    <div class=" table-responsive">
 
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let s of filteredStudentData">
-          <th>{{s.ID}}</th>
-          <td>{{s.Name}}</td>
-          <td>{{s.Mobile}}</td>
-          <td>{{s.Email}}</td>
-          <td>{{s.NationalID}}</td>
-          <td>{{s.Age}}</td>
-          <td>
-            <button type="button" class="btn btn-primary" (click)="editStudent(s.ID)">
-              {{"Edit"|translate}}
-            </button>
-          </td>
-
-          <td>
-            <button type="button" class="btn btn-danger"  (click)="openConfirmModal(s)">
-              {{"Delete"|translate}}
-            </button>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>{{"ID"|translate}}</th>
+            <th>{{"Name"|translate}}</th>
+            <th>{{"Mobile"|translate}}</th>
+            <th>{{"Email"|translate}}</th>
+            <th>{{"NationalID"|translate}}</th>
+            <th>{{"Age"|translate}}</th>
+            <th></th>
+            <th></th>
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of filteredStudentData">
+            <th>{{s.ID}}</th>
+            <td>{{s.Name}}</td>
+            <td>{{s.Mobile}}</td>
+            <td>{{s.Email}}</td>
+            <td>{{s.NationalID}}</td>
+            <td>{{s.Age}}</td>
+            <td>
+            
+              <i class="bi bi-pencil-square link-primary fs-5" (click)="editStudent(s.ID)" ></i>
+            </td>
+  
+            <td>
+             
+              <i class="bi bi-trash-fill link-danger fs-5" (click)="openConfirmModal(s)"></i>
+            </td>
+          </tr>
+  
+        </tbody>
+      </table>
+    </div>
 
 
     <!-- Modal -->

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserDTO } from 'src/app/Shared/Models/user-dto';
+import { LoaderService } from 'src/app/Shared/Services/loader.service';
 import { UserService } from 'src/app/Shared/Services/user.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class RegisterFormComponent implements OnInit {
   registerForm!:FormGroup;
   resMessage?:string;
   failed:boolean=false;
-  constructor(private userService:UserService,private router:Router){
+  constructor(private userService:UserService,private router:Router,private loader:LoaderService){
 
   }
   ngOnInit(): void {
@@ -24,12 +25,14 @@ export class RegisterFormComponent implements OnInit {
     })
   }
   register(){
+    this.loader.setLoading(true)
     let newUser:UserDTO={
       Name:this.registerForm.controls['nameControl'].value,
       UserName:this.registerForm.controls['userNameControl'].value,
       Password:this.registerForm.controls['passwordControl'].value,
     }
     this.userService.register(newUser).subscribe(res=>{
+      this.loader.setLoading(false)
       this.resMessage=res.Message
       if(res.Success==true)
         {

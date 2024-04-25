@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { UserDTO } from 'src/app/Shared/Models/user-dto';
+import { LoaderService } from 'src/app/Shared/Services/loader.service';
 import { UserService } from 'src/app/Shared/Services/user.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class LogInComponent implements OnInit {
   failed:boolean=false;
   resMessage?:string;
 
-  constructor(private userService:UserService, private router:Router){
+  constructor(private userService:UserService, private router:Router,private loader:LoaderService){
 
   }
   ngOnInit(): void {
@@ -29,8 +30,9 @@ export class LogInComponent implements OnInit {
       UserName:this.loginForm.controls['userNameControl'].value,
       Password:this.loginForm.controls['passwordControl'].value,
     }
+    this.loader.setLoading(true)
       this.userService.login(user).subscribe(res => {
-  
+        this.loader.setLoading(false)
         if (res.Success) {
           this.failed=false
           

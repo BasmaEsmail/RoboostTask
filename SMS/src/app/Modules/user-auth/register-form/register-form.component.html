@@ -1,27 +1,35 @@
+<div class="fs-2 fw-bolder my-4 text-center">
+  {{"Register"|translate}}
+  <p>
+    <i class="bi bi-person-circle text-success fs-1"></i>
+
+  </p>
+</div>
+
 <form class="row my-5 justify-content-center" [formGroup]="registerForm">
     <div class="col-6">
 
     
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="nameControl" placeholder="Name" formControlName="nameControl" >
-        <label for="nameControl">{{"Name"|translate}}</label>
+        <label class="fw-bold" for="nameControl">{{"Name"|translate}}</label>
       </div>
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="userNameControl" placeholder="User Name" 
         formControlName="userNameControl" >
-        <label for="userNameControl">{{"User Name"|translate}}</label>
+        <label  class="fw-bold"  for="userNameControl">{{"User Name"|translate}}</label>
       </div>
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="passwordControl" placeholder="Password" 
         formControlName="passwordControl">
-        <label for="passwordControl">{{"Password"|translate}}</label>
+        <label  class="fw-bold"  for="passwordControl">{{"Password"|translate}}</label>
       </div>
-      <button type="submit" class="btn btn-success" (click)="register()">{{"Register"|translate}}</button>
+      <button type="submit" class="btn btn-success fw-bold" (click)="register()">{{"Register"|translate}}</button>
     </div>
 
-    <div class="row text-center">
+    <div class="row text-center fw-bold">
         <p>
-            {{"Already have an account?"|translate}} <a  class="link-warning" [routerLink]="['/login']">{{"Login"|translate}}</a>
+            {{"Already have an account?"|translate}} <a  class="link-warning text-decoration-none" [routerLink]="['/login']">{{"Login"|translate}}</a>
         </p>
        
     </div>
