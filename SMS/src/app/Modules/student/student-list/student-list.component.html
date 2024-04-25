@@ -2,7 +2,7 @@
 <div class="row my-5 ">
   <div class="col-md-6">
     <button class="btn btn-primary" (click)="openAddForm()">
-      New Student
+      {{"Add"|translate}}
     </button>
   </div>
   <div class="col-md-6 ">
@@ -13,12 +13,12 @@
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Mobile</th>
-          <th>Email</th>
-          <th>NationalID</th>
-          <th>Age</th>
+          <th>{{"ID"|translate}}</th>
+          <th>{{"Name"|translate}}</th>
+          <th>{{"Mobile"|translate}}</th>
+          <th>{{"Email"|translate}}</th>
+          <th>{{"NationalID"|translate}}</th>
+          <th>{{"Age"|translate}}</th>
           <th></th>
           <th></th>
 
@@ -33,12 +33,14 @@
           <td>{{s.NationalID}}</td>
           <td>{{s.Age}}</td>
           <td>
-            <button type="button" class="btn btn-primary" (click)="editStudent(s.ID)">Edit</button>
+            <button type="button" class="btn btn-primary" (click)="editStudent(s.ID)">
+              {{"Edit"|translate}}
+            </button>
           </td>
 
           <td>
             <button type="button" class="btn btn-danger"  (click)="openConfirmModal(s)">
-              Delete
+              {{"Delete"|translate}}
             </button>
           </td>
         </tr>
@@ -50,20 +52,20 @@
     <!-- Modal -->
 <ng-template  #confirmModal let-modal >
  
-      <div class="modal-header">
-        <h5 class="modal-title" id="confirmModalLabel">Delete Student</h5>
+      <div class="modal-header" >
+        <h5 class="modal-title" id="confirmModalLabel">{{"Delete Student"|translate}}</h5>
         <button type="button" class="btn-close" (click)="modal.dismiss()"></button>
       </div>
       <div class="modal-body">
-       Are you sure want to delete
+       {{"Are you sure want to delete"|translate}}
        <span class="text-danger">
         {{selectedStudent?.Name}}
        </span> 
        ?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
-        <button type="button" class="btn btn-danger" (click)="deleteStudent()">Delete</button>
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">{{"Close"|translate}}</button>
+        <button type="button" class="btn btn-danger" (click)="deleteStudent()">{{"Delete"|translate}}</button>
       </div>
    
 </ng-template>

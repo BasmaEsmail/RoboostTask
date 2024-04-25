@@ -2,7 +2,7 @@
    <div class="row  my-4">
     <div class="title col-2">
         <p class="fs-5 ">
-            Edit Student
+            {{"Edit Student"|translate}}
         </p>
     </div>
     
@@ -11,19 +11,19 @@
     <form class="my-3 mx-3" [formGroup]="updateStudentForm">
         <div class="row">
             <div class=" col-6 mb-3">
-                <label class="form-label"> Name In Arabic</label>
+                <label class="form-label"> {{"Name In Arabic"|translate}}</label>
                 <input type="text" class="form-control" formControlName="nameArabicControl">
                 <span class="text-danger error " *ngIf="submitted&&updateStudentForm.controls['nameArabicControl'].hasError('required')">
-                     Required 
+                     {{"Required"|translate}} 
                 </span>
             </div>
     
             <div class=" col-6 mb-3">
-                <label class="form-label">Name In English</label>
+                <label class="form-label">{{"Name In English"|translate}}</label>
                 <input type="text" class="form-control"  formControlName="nameEnglishControl">
                 <span class="text-danger error" 
                 *ngIf="submitted&&updateStudentForm.controls['nameEnglishControl'].hasError('required')">
-                 Required
+                {{"Required"|translate}} 
                  </span>
 
             </div>
@@ -31,19 +31,19 @@
 
         <div class="row">
             <div class=" col-6 mb-3">
-                <label class="form-label">First Name</label>
+                <label class="form-label">{{"First Name"|translate}}</label>
                 <input type="text" class="form-control" formControlName="firstNameControl">
                 <span class="text-danger error " *ngIf="submitted&&updateStudentForm.controls['firstNameControl'].hasError('required')">
-                     Required 
+                    {{"Required"|translate}}  
                 </span>
             </div>
     
             <div class=" col-6 mb-3">
-                <label class="form-label">Last Name</label>
+                <label class="form-label">{{"Last Name"|translate}}</label>
                 <input type="text" class="form-control"  formControlName="lastNameControl">
                 <span class="text-danger error" 
                 *ngIf="submitted&&updateStudentForm.controls['lastNameControl'].hasError('required')">
-                 Required
+                 {{"Required"|translate}}
                  </span>
 
             </div>
@@ -51,33 +51,33 @@
        
         <div class="row">
             <div class="col-6 mb-3">
-                <label class="form-label">Mobile</label>
+                <label class="form-label">{{"Mobile"|translate}}</label>
                 <input type="email" class="form-control"  formControlName="mobileControl">
             </div>
             <div class="col-6 mb-3">
-                <label class="form-label">Email</label>
+                <label class="form-label">{{"Email"|translate}}</label>
                 <input type="email" class="form-control"  formControlName="emailControl">
                 <span class="text-danger error" 
                 *ngIf="submitted&&updateStudentForm.controls['emailControl'].hasError('email')">
-                 Invalid Email Format
-                 </span>
+                {{"Invalid Email Format"|translate}}
+            </span>
             </div>
             
         </div>
         
         <div class="row">
             <div class="col-6 mb-3">
-                <label class="form-label">NationalID</label>
+                <label class="form-label">{{"NationalID"|translate}}</label>
                 <input type="text" class="form-control" formControlName="nidControl">
                
             </div>
             <div class="col-6 mb-3">
-                <label class="form-label">Age</label>
+                <label class="form-label">{{"Age"|translate}}</label>
                 <input type="text" class="form-control"  formControlName="ageControl">
             </div>
         </div>
        
 
-        <button type="submit" class="btn btn-success mx-2" (click)="save()">Save</button>
+        <button type="submit" class="btn btn-success mx-2" (click)="save()">{{"Save"|translate}}</button>
 
     </form>

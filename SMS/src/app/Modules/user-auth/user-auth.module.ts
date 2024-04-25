@@ -6,6 +6,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogInComponent } from './log-in/log-in.component';
 import { NgbToast } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NgbToast } from '@ng-bootstrap/ng-bootstrap';
     UserAuthRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    TranslateModule
   ]
 })
 export class UserAuthModule { }

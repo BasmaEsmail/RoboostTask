@@ -6,20 +6,32 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/student']">Students</a>
-          </li>
-        </ul>
-  
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <li class="nav-item">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/student']">{{'Students'|translate}}</a>
+      </li>
+    </ul>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            
+        <ul class="navbar-nav "> <li class="nav-item">
             <button class=" btn btn-outline-warning " (click)="logout()">
-                Log Out
+               {{ "Log out"|translate}}
             </button>
           </li>
         </ul>
+        <ul class="navbar-nav "> <li class="nav-item">
+          <div class="row">
+            <select class=" w-50 form-select mx-5" (change)="changeLang($event)">
+              <option value="en" [selected]="lang=='en'">EN</option>
+              <option value="ar" [selected]="lang=='ar'">AR</option>
+              
+            </select>
+          </div>
+        </li>
+      </ul>
+        
+        
       </div>
+     
     </div>
   </nav>
   <div class="container">

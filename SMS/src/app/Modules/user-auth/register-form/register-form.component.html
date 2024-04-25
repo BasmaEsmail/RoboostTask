@@ -4,24 +4,24 @@
     
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="nameControl" placeholder="Name" formControlName="nameControl" >
-        <label for="nameControl">Name</label>
+        <label for="nameControl">{{"Name"|translate}}</label>
       </div>
     <div class="form-floating mb-3">
         <input type="text" class="form-control" id="userNameControl" placeholder="User Name" 
         formControlName="userNameControl" >
-        <label for="userNameControl">User Name</label>
+        <label for="userNameControl">{{"User Name"|translate}}</label>
       </div>
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="passwordControl" placeholder="Password" 
         formControlName="passwordControl">
-        <label for="passwordControl">Password</label>
+        <label for="passwordControl">{{"Password"|translate}}</label>
       </div>
-      <button type="submit" class="btn btn-success" (click)="register()">Register</button>
+      <button type="submit" class="btn btn-success" (click)="register()">{{"Register"|translate}}</button>
     </div>
 
     <div class="row text-center">
         <p>
-            Already have an account? <a  class="link-warning" [routerLink]="['/login']">Log In</a>
+            {{"Already have an account?"|translate}} <a  class="link-warning" [routerLink]="['/login']">{{"Login"|translate}}</a>
         </p>
        
     </div>

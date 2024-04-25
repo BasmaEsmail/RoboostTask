@@ -1,0 +1,33 @@
+{
+    "Students":"الطلاب",
+    "Log out":"تسجيل خروج",
+    "Name":"الاسم",
+    "Age":"السن",
+    "Mobile":"رقم الهاتف",
+    "NationalID":"الرقم القومي",
+    "ID":"المسلسل",
+    "Add":"إضافة",
+    "Delete":"حذف",
+    "Edit":"تعديل",
+    "Edit Student":"تعديل طالب",
+    "Save":"حفظ",
+    "Email":"البريد الإلكتروني",
+    "Name In Arabic":"الاسم باللغة العربية",
+    "Name In English":"الاسم باللغة الإنجليزية",
+    "First Name":"الاسم الأول",
+    "Last Name":"اسم العائلة",
+    "Required":"مطلوب",
+    "Close":"إغلاق",
+    "Invalid Email Format":"بريد إلكتروني غير صحيح",
+    "Are you sure want to delete":"هل أنت متأكد من حذف",
+    "Delete Student":"حذف طالب",
+    "User Name":"اسم المستخدم",
+    "Password":"كلمة السر",
+    "Login":"تسجيل دخول",
+    "Register":"تسجيل",
+    "Don't have an account?":"ليس لديك حساب؟",
+    "Already have an account?":"لديك حساب؟",
+    "Search":"بحث"
+
+
+}
