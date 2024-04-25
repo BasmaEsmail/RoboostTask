@@ -1,0 +1,34 @@
+<div class="title-box fs-2 text-center my-4">
+  Login
+</div>
+<form class="row my-5 justify-content-center" [formGroup]="loginForm">
+    <div class="col-6">
+
+    
+   
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="userNameControl" placeholder="User Name" 
+        formControlName="userNameControl" >
+        <label for="userNameControl">User Name</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="passwordControl" placeholder="Password" 
+        formControlName="passwordControl">
+        <label for="passwordControl">Password</label>
+      </div>
+      <button type="submit" class="btn btn-success" (click)="login()">Login</button>
+    </div>
+
+</form>
+
+<div class="row text-center">
+  <p>
+      Don't have an account? <a  class="link-warning" [routerLink]="['/register']">Register</a>
+  </p>
+ 
+</div>
+<div class="row justify-content-center text-center">
+  <div class="alert alert-danger col-6" role="alert" *ngIf="failed">
+      {{resMessage}}
+    </div>
+</div>
