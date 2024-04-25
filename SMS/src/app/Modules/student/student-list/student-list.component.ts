@@ -14,6 +14,8 @@ export class StudentListComponent implements OnInit {
 
 
   studentData:StudentDataDTO[]=[];
+  filteredStudentData:StudentDataDTO[]=[];
+
   //--------------
   selectedStudent?:StudentDataDTO;
 
@@ -29,7 +31,8 @@ export class StudentListComponent implements OnInit {
   }
   getStudentList(){
     this.studentService.getStudentList().subscribe(res=>{
-      this.studentData=res.Data
+      this.studentData=res.Data;
+      this.filteredStudentData=res.Data;
     })
   }
   openAddForm(){
@@ -48,5 +51,11 @@ export class StudentListComponent implements OnInit {
     }
     editStudent(id:number) {
     this.router.navigate([`student/edit/${id}`])
+    }
+
+    search(event:any){
+      this.filteredStudentData= this.studentData.filter(s=>s.Name.includes(event.target.value) || s.Age.toString().includes(event.target.value)
+      || s.Mobile.includes(event.target.value) || s.NationalID.includes(event.target.value)
+     )
     }
 }
